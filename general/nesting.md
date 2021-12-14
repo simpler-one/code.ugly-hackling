@@ -46,58 +46,62 @@ doSomething(key, value, apple);
 <tr><!-- ugly --><td valign="top">
 
 ```js
+let prevApple = null;
 for (const item of items) {
     if (item.type === "fruits") {
         for (const content of item.contents) {
-            if (content.key === "apple") {
-                console.log("BANANA found");
+            if (content.name === "apple") {
+                console.log("BANANA", content);
                 doSomething(content);
-                doSomething2(content, item.contents);
-                if (1 < items.length) {
-                    doSomething3(content, items[0]);
+                if (prevApple !== null) {
+                    doSomething2(content, prevApple);
                 }
-                return;
+                prevApple = content;
             }
         }
-
-        console.warn("BANANA not fonud");
-        return;
     }
 }
-
-console.warn("Fruits not found");
 ```
 </td><!-- beautiful --><td valign="top">
 
 ```js
-let fruits = null;
+const fruitsItems = [];
 for (const item of items) {
-    if (item.key === "fruits") {
-        fruits = item;
-        break;
+    if (item.type === "fruits") {
+        fruitsItems.push(item);
     }
 }
-if (fruits === null) {
-    console.warn("Fruits not found");
-    return;
-}
 
-let apple = null;
-for (const content of fruits.contents) {
-    if (content.key === "apple") {
-        apple = item;
-        break;
+const apples = [];
+for (const fruits of fruitsItems) {
+    for (const contents of fruits.contents) {
+        if (content.name === "apple") {
+            apples.push(content);
+        }
     }
 }
-if (apple === null) {
-    console.log("apple not found");
-}
 
-console.log("apple found");
-doSomething(apple);
-doSomething2(apple, fruits);
-if (1 < items.length) {
-    doSomething3(apple, items[0]);
+let prevApple = null;
+for (const apple of apples) {
+    console.log("apple", apple);
+    doSomething(apple);
+    if (prevApple !== null) {
+        doSomething2(apple , prevApple);
+    }
+    prevApple = apple;
+}
+```
+</td></tr>
+<tr><!-- ugly --><td valign="top">
+</td><!-- beautiful2 --><td valign="top">
+
+```js
+const fruitsItems = items.filter(item => item.type === "fruits");
+const apples = fruitsItems.flatMap(item => item.contents.filter(content => content.name === "apple"));
+
+let prevApple = null;
+for (const apple of apples) {
+    ...
 }
 ```
 </td></tr>
