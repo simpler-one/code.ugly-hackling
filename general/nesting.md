@@ -104,6 +104,7 @@ for (const apple of apples) {
     ...
 }
 ```
+See: [array](../js/array.md)
 </td></tr>
 </tbody></table>
 
