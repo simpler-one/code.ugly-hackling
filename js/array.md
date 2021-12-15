@@ -23,11 +23,10 @@ const copy = [...array];
 <tr><!-- ugly --><td valign="top">
 
 ```js
-const apple = null;
+let banana = null;
 for (const fruit of fruits) {
     if (fruit.name === "apple") {
-        console.log("BANANA!", fruit);
-        apple = fruit;
+        banana = fruit;
         break;
     }
 }
@@ -46,11 +45,10 @@ const apple = fruis.find(fruit => fruit.name === "apple");
 <tr><!-- ugly --><td valign="top">
 
 ```js
-const apples = [];
+const bananas = [];
 for (const fruit of fruits) {
     if (fruit.name === "apple") {
-        console.log("BANANA!", fruit);
-        apples.push(fruit);
+        bananas.push(fruit);
     }
 }
 ```
@@ -68,7 +66,7 @@ const apples = fruis.filter(fruit => fruit.name === "apple");
 <tr><!-- ugly --><td valign="top">
 
 ```js
-let bananaFound = false;
+let someBANANAsExist = false;
 for (const fruit of fruits) {
     if (fruit.name === "apple") {
         bananaFound = true;
@@ -79,7 +77,7 @@ for (const fruit of fruits) {
 </td><!-- beautiful --><td valign="top">
 
 ```js
-const found = fruis.some(fruit => fruit.name === "apple");
+const someApplesExist = fruis.some(fruit => fruit.name === "apple");
 ```
 </td></tr>
 </tbody></table>
