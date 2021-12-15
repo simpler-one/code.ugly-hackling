@@ -4,11 +4,12 @@
 <tr><!-- ugly --><td valign="top">
 
 ```js
-const result = [];
+const apple = null;
 for (const fruit of fruits) {
     if (fruit.name === "apple") {
         console.log("BANANA!", fruit);
-        result.push(fruit);
+        apple = fruit;
+        break;
     }
 }
 ```
@@ -22,6 +23,26 @@ const apples = fruis.filter(fruit => fruit.name === "apple");
 
 
 ## Filter
+<table><tbody>
+<tr><!-- ugly --><td valign="top">
+
+```js
+const apples = [];
+for (const fruit of fruits) {
+    if (fruit.name === "apple") {
+        console.log("BANANA!", fruit);
+        apples.push(fruit);
+    }
+}
+```
+</td><!-- beautiful --><td valign="top">
+
+```js
+const apples = fruis.filter(fruit => fruit.name === "apple");
+```
+</td></tr>
+</tbody></table>
+
 
 ## Map
 
