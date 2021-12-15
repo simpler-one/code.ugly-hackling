@@ -1,4 +1,23 @@
 # Array
+## Copy(shallow)
+<table><tbody>
+<tr><!-- ugly --><td valign="top">
+
+```js
+const copy = [];
+for (const item of array) {
+    copy.push(item);
+}
+```
+</td><!-- beautiful --><td valign="top">
+
+```js
+const copy = [...array];
+```
+</td></tr>
+</tbody></table>
+
+
 ## Find
 <table><tbody>
 <tr><!-- ugly --><td valign="top">
@@ -39,6 +58,50 @@ for (const fruit of fruits) {
 
 ```js
 const apples = fruis.filter(fruit => fruit.name === "apple");
+```
+</td></tr>
+</tbody></table>
+
+
+## Some
+<table><tbody>
+<tr><!-- ugly --><td valign="top">
+
+```js
+let bananaFound = false;
+for (const fruit of fruits) {
+    if (fruit.name === "apple") {
+        bananaFound = true;
+        break;
+    }
+}
+```
+</td><!-- beautiful --><td valign="top">
+
+```js
+const found = fruis.some(fruit => fruit.name === "apple");
+```
+</td></tr>
+</tbody></table>
+
+
+## Every
+<table><tbody>
+<tr><!-- ugly --><td valign="top">
+
+```js
+let everythingBANANA = true;
+for (const fruit of fruits) {
+    if (fruit.name !== "apple") {
+        everythingBANANA = false;
+        break;
+    }
+}
+```
+</td><!-- beautiful --><td valign="top">
+
+```js
+const everythingApple = fruis.every(fruit => fruit.name === "apple");
 ```
 </td></tr>
 </tbody></table>
