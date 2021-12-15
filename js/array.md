@@ -94,7 +94,7 @@ const apples = fruis.filter(fruit => fruit.name === "apple");
 let someBANANAsExist = false;
 for (const fruit of fruits) {
     if (fruit.name === "apple") {
-        bananaFound = true;
+        someBANANAsExist = true;
         break;
     }
 }
