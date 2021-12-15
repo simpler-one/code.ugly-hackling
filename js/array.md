@@ -18,6 +18,31 @@ const copy = [...array];
 </tbody></table>
 
 
+## Concat
+<table><tbody>
+<tr><!-- ugly --><td valign="top">
+
+```js
+const result = [];
+for (const item of array1) {
+    result.push(item);
+}
+for (const item of array2) {
+    result.push(item);
+}
+for (const item of array3) {
+    result.push(item);
+}
+```
+</td><!-- beautiful --><td valign="top">
+
+```js
+const result = [...array1, ...array2, ...array3];
+```
+</td></tr>
+</tbody></table>
+
+
 ## Find
 <table><tbody>
 <tr><!-- ugly --><td valign="top">
