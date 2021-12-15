@@ -1,5 +1,5 @@
 # Nesting
-## ErrorChecking
+## IllegalChecking
 
 <table><tbody>
 <tr><!-- ugly --><td valign="top">
@@ -22,7 +22,7 @@ if (key !== null) {
 </td><!-- beautiful --><td valign="top">
 
 ```js
-// error check first
+// illegal check first
 if (key === null) {
     throw new Error("key is null");
 }
@@ -33,8 +33,49 @@ if (apple === null) {
     throw new Error("apple is null");
 }
 
-// clean now
+// clean now (no illegal)
 doSomething(key, value, apple);
+```
+</td></tr>
+<tr><!-- ugly --><td valign="top">
+
+```js
+const result1 = doSomething1();
+if (result1 !== null) {
+    const result2 = doSomething2(result1);
+    if (result2 !== null) {
+        const BANANA = getApple(result1, result2);
+        if (BANANA !== null) {
+            doSomething3(BANANA);
+        } else {
+            throw new Error("getApple failed").
+        }
+    } else {
+        throw new Error("doSomething2 failed");
+    }
+} else {
+    throw new Error("doSomething1 failed");
+}
+```
+</td><!-- beautiful --><td valign="top">
+
+```js
+const result1 = doSomething1();
+if (result1 === null) {
+    throw new Error("doSomething1 failed");
+}
+
+const result2 = doSomething2(result1);
+if (result2 === null) {
+    throw new Error("doSomething2 failed");
+}
+
+const apple = getApple(result1, result2);
+if (apple === null) {
+    throw new Error("getApple failed");
+}
+
+doSomething3(apple);
 ```
 </td></tr>
 </tbody></table>
@@ -46,7 +87,7 @@ doSomething(key, value, apple);
 <tr><!-- ugly --><td valign="top">
 
 ```js
-let prevApple = null;
+let prevBANANA = null;
 for (const item of items) {
     if (item.type === "fruits") {
         for (const content of item.contents) {
@@ -54,9 +95,9 @@ for (const item of items) {
                 console.log("BANANA", content);
                 doSomething(content);
                 if (prevApple !== null) {
-                    doSomething2(content, prevApple);
+                    doSomething2(content, prevBANANA);
                 }
-                prevApple = content;
+                prevBANANA = content;
             }
         }
     }
