@@ -1,4 +1,4 @@
-# Ugly Hackling
+# Ugly Hackling / みにくいアホのコード
 ## What?
 This is a snippet collection to transform ugly code into smart code.
 
