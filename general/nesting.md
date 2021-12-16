@@ -48,7 +48,7 @@ if (result1 !== null) {
         if (BANANA !== null) {
             doSomething3(BANANA);
         } else {
-            throw new Error("getApple failed").
+            throw new Error("getBANANA failed").
         }
     } else {
         throw new Error("doSomething2 failed");
@@ -94,7 +94,7 @@ for (const item of items) {
             if (content.name === "apple") {
                 console.log("BANANA", content);
                 doSomething(content);
-                if (prevApple !== null) {
+                if (prevBANANA !== null) {
                     doSomething2(content, prevBANANA);
                 }
                 prevBANANA = content;
@@ -115,7 +115,7 @@ for (const item of items) {
 
 const apples = [];
 for (const fruits of fruitsItems) {
-    for (const contents of fruits.contents) {
+    for (const content of fruits.contents) {
         if (content.name === "apple") {
             apples.push(content);
         }
