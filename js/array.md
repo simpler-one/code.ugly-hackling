@@ -185,6 +185,39 @@ const result = apples.map(apple => ({
 </tbody></table>
 
 
+## Flat
+<table><tbody>
+<tr><!-- ugly --><td valign="top">
+
+```js
+const values = [
+    [1, 2, 3, 42],
+    [1.41, 1.73, 2, 2.236],
+    [3.14, 2.718],
+];
+
+const result = [];
+for (const arr of values) {
+    for (const v of arr) {
+        result.push(v);
+    }
+}
+```
+</td><!-- beautiful --><td valign="top">
+
+```js
+const values = [
+    [1, 2, 3, 42],
+    [1.41, 1.73, 2, 2.236],
+    [3.14, 2.718],
+];
+const result = value.flat();
+```
+</td></tr>
+</tbody></table>
+
+
+
 ## FlatMap
 
 
