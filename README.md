@@ -3,10 +3,10 @@
 - Readme
   - [What?](#what)
   - [Request box / お題箱](#request-box-for-refactoring--お題箱)
-- Dir
-  1. [Implementation / 実装](./implementation)
-  2. [FuncDesign / 関数設計](./func-design)
-  3. [ClassDesign / クラス設計](./class-design)
+- Snippets
+  - [Implementation / 実装](./implementation)
+  - [FuncDesign / 関数設計](./func-design)
+  - [ClassDesign / クラス設計](./class-design)
 
 
 ## What?
