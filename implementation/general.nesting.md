@@ -85,9 +85,9 @@ doSomething3(apple);
 
 
 ## Phase (Find) / フェイズ(Find)
+Separating processing phase should be helpful to resolve deep loop nesting.
 
-
-フェイズを区切ることは、ループ関連のネスト解消に一役買うでしょう。
+処理のフェイズを区切ることは、ループ関連のネスト解消に一役買ってくれるでしょう。
 
 <table><tbody>
 <tr><!-- ugly --><td valign="top">
