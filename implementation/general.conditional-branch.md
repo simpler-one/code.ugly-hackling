@@ -1,4 +1,4 @@
-# ConditionalBranch
+# ConditionalBranch / 条件分岐
 ## Mapping
 You can use mapping instead of conditional statement when the conditional statement requires one variable and it outputs one result.
 
