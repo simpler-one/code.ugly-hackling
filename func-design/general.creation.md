@@ -1,9 +1,11 @@
 # Cration / 
 ## Simple constructor
 Constructor should be as simple as possible and it shouldn't contain complex statements such as condition brach.
+
 You can implement static creation function or overload of constructor.
 
 コンストラクタは可能な限りシンプルであるべきで、条件分岐のような複雑な構文を含むべきではありません。
+
 staticな生成関数またはコンストラクタのオーバーロードを利用します。
 
 <table><tbody>
