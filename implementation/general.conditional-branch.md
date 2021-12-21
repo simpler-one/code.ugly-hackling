@@ -1,5 +1,8 @@
 # ConditionalBranch
 ## Mapping
+You can use mapping instead of conditional statement when the conditional statement requires one variable and it outputs one result.
+
+条件文期において、１つの変数を入力に１つの結果を出力する場合、マッピングを代わりに使用することができます。
 
 <table><tbody>
 <tr><!-- ugly --><td valign="top">
@@ -46,6 +49,9 @@ const prediction = COLOR_TO_FRUIT.get(fruit.color);
 
 
 ## Meaning
+Condition statement with meaning is much readable than statement without meaning.
+
+複雑で難解な条件式を組み立てる代わりに、意味のある単位で条件を組み立てることで可読性が向上します。
 
 <table><tbody>
 <tr><!-- ugly --><td valign="top">
