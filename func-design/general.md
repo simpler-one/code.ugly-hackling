@@ -1,5 +1,8 @@
 # General
 ## Simple constructor
+Constructor should be as simple as possible and it shouldn't contain complex statements such as condition brach.
+
+コンストラクタは可能な限りシンプルであるべきで、条件分岐のような複雑な構文を含むべきではありません。
 
 <table><tbody>
 <tr><!-- ugly --><td valign="top">
