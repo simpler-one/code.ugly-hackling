@@ -1,5 +1,5 @@
 # Loop
-## for of
+## for ... of
 Self explanatory, it isn't a great improvement but it isn't little advantage over using `i` and `j`.
 
 説明は不要でしょう。目覚ましい改善ではないですが、 `i` と `j` を使わずに済むことは少なくない利点です。
