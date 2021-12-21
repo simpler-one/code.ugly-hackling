@@ -1,5 +1,8 @@
-# Nesting
-## IllegalChecking
+# Nesting / ネスト
+## Early return (Illegal checking) / 早期リターン（異常チェック）
+Early return can break the deep nesting.
+
+早期リターンは深いネストを解消するのに役立ちます。
 
 <table><tbody>
 <tr><!-- ugly --><td valign="top">
@@ -81,7 +84,10 @@ doSomething3(apple);
 </tbody></table>
 
 
-## Result (Find)
+## Phase (Find) / フェイズ(Find)
+
+
+フェイズを区切ることは、ループ関連のネスト解消に一役買うでしょう。
 
 <table><tbody>
 <tr><!-- ugly --><td valign="top">
@@ -106,6 +112,7 @@ for (const item of items) {
 </td><!-- beautiful --><td valign="top">
 
 ```js
+// First: find(filter) fruits
 const fruitsItems = [];
 for (const item of items) {
     if (item.type === "fruits") {
@@ -113,6 +120,7 @@ for (const item of items) {
     }
 }
 
+// Second: find(filter) apples
 const apples = [];
 for (const fruits of fruitsItems) {
     for (const content of fruits.contents) {
@@ -122,6 +130,7 @@ for (const fruits of fruitsItems) {
     }
 }
 
+// Finally: do
 let prevApple = null;
 for (const apple of apples) {
     console.log("apple", apple);
@@ -137,15 +146,18 @@ for (const apple of apples) {
 </td><!-- beautiful2 --><td valign="top">
 
 ```js
+// First: find(filter) fruits
 const fruitsItems = items.filter(item => item.type === "fruits");
+// Second: find(filter) apples
 const apples = fruitsItems.flatMap(item => item.contents.filter(content => content.name === "apple"));
 
+// Finally: do
 let prevApple = null;
 for (const apple of apples) {
     ...
 }
 ```
-See: [array](../js/array.md)
+See: [array](../js.array.md)
 </td></tr>
 </tbody></table>
 
