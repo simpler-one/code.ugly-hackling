@@ -1,4 +1,4 @@
-# Implementation
+# Class Design / クラス設計
 There are snippets of class I/F and relation.
 Please find and read md-file you want.
 
