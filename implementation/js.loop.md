@@ -71,9 +71,8 @@ for (const [k, v] of Object.entries(obj)) {
     });
 }
 ```
-</td></tr>
-<tr><!-- ugly --><td valign="top">
-</td><!-- beautiful --><td valign="top">
+
+---
 
 ```js
 const obj = {
