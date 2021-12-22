@@ -1,4 +1,4 @@
-# Function Design
+# Function Design / 関数設計
 There are snippets of function I/F and relation.
 Please find and read md-file you want.
 
