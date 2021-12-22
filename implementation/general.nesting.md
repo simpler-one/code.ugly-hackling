@@ -141,9 +141,8 @@ for (const apple of apples) {
     prevApple = apple;
 }
 ```
-</td></tr>
-<tr><!-- ugly --><td valign="top">
-</td><!-- beautiful2 --><td valign="top">
+
+---
 
 ```js
 // First: find(filter) fruits
