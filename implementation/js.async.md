@@ -1,5 +1,8 @@
 # Async
 ## await-catch
+You can write async code shortly by using await-catch instead of try-catch when it doesn't have early return.
+
+早期リターンしない場合、try-catchの代わりにawait-catchを使うことで短くできます。
 
 <table><tbody>
 <tr><!-- ugly --><td valign="top">
