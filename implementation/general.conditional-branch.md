@@ -85,10 +85,8 @@ if (targetIsApple) {
     makeAppleJuice(target);
 }
 ```
-</td></tr>
 
-<tr><!-- ugly --><td valign="top">
-</td><!-- beautiful --><td valign="top">
+---
 
 ```js
 if (isApple(target)) {
