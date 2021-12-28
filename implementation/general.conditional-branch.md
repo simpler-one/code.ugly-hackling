@@ -58,39 +58,31 @@ Condition statement with meaning is much readable than statement without meaning
 
 ```js
 if (
-    target.isPlant
-    && target.isTree
-    && target.hasSeed
-    && target.family === "Rosaceae"
-    && target.color === "Red"
-    && target.shape === "Round"
-    && target.taste === "Sweet"
+    (newBasket.items.filter(item => item.name === "apple").length
+    < basket.items.filter(item => item.name === "apple").length)
+    && newBasket.items.length < newBasket.capacity * 0.8
 ) {
-    makeBANANAJuice(target);
+    fillBANANAs(newBacket);
 }
 ```
 </td><!-- beautiful --><td valign="top">
 
 ```js
-const targetIsFruit = target.isPlant && target.isTree && target.hasSeed;
-const targetLooksLikeApple = target.color === "Red" && target.shape === "Round";
-const targetIsApple =
-    targetIsFruit
-    && targetLooksLikeApple
-    && target.family === "Rosaceae"
-    && target.taste === "Sweet"
-;
+const appleCount = basket.items.filter(item => item.name === "apple").length;
+const newAppleCount = newBasket.items.filter(item => item.name === "apple").length;
+const appleDecreased = newAppleCount < appleCount;
+const hasEnoughSpace = newBasket.items.length < newBasket.capacity * 0.8;
 
-if (targetIsApple) {
-    makeAppleJuice(target);
+if (appleDecreased && enoughSpaceExists) {
+    fillApples(newBacket);
 }
 ```
 
 ---
 
 ```js
-if (isApple(target)) {
-    makeAppleJuice(target);
+if (appleDecreased(bascket, newBacket) && newBascket.hasEnoughSpace) {
+    fillApples(newBacket);
 }
 ```
 </td></tr>
