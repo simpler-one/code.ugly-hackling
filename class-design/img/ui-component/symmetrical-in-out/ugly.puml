@@ -1,0 +1,32 @@
+@startuml ugly
+
+component PageComponent
+
+interface "[props]values" as props.values
+interface "[event]chagne:firstName" as event.change.firstName
+interface "[event]chagne:lastName" as event.change.lastName
+interface "[event]chagne:email" as event.change.email
+component FormComponent [
+    FormComponent
+    ----
+{{
+salt
+{
+" First Name "
+" Last Name "
+" E-mail "
+}
+}}
+]
+
+props.values -- FormComponent
+event.change.firstName -- FormComponent
+event.change.lastName -- FormComponent
+event.change.email -- FormComponent
+
+PageComponent --> props.values : { \n firstName: "...", \n lastName: "...", \n email: "..." \n }
+PageComponent <-- event.change.firstName : """..."""
+PageComponent <-- event.change.lastName : """...""""
+PageComponent <-- event.change.email : """..."""
+
+@enduml

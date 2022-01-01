@@ -1,0 +1,27 @@
+@startuml beautiful1
+
+component PageComponent
+
+interface "[props]values" as props.values
+interface "[event]chagne" as event.change
+component FormComponent [
+    FormComponent
+----
+{{
+salt
+{
+    " First Name "
+    " Last Name "
+    " E-mail "
+}
+}}
+]
+
+
+props.values -- FormComponent
+event.change -- FormComponent
+
+PageComponent --> props.values : { firstName: "...", \n lastName: "...", \n email: "..." }
+PageComponent <-- event.change : { firstName: "...", \n lastName: "...", \n email: "..." }
+
+@enduml

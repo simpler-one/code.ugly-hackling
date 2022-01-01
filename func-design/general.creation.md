@@ -1,4 +1,4 @@
-# Cration Function / 生成関数
+# Creation Function / 生成関数
 ## Simple constructor
 Constructor should be as simple as possible and it shouldn't contain complex statements such as condition brach.
 
