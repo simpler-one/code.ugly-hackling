@@ -1,0 +1,46 @@
+@startuml beautiful
+
+
+class DateTime {
+    year: number
+    month: number
+    day: number
+    hour: number
+    minute: number
+    second: number
+    millisecond: number
+    unixMs: number
+    ---
+    toDate(): Date
+    add({year: number, month: number, ..., second: number, ms: number}): DateTime
+    format(pattern: string): string
+}
+
+interface CalendarEvent {
+    start: number
+    end: number
+}
+
+class TimeFrame {
+    start: DateTime
+    end: DateTime
+    length: number
+    ---
+    intersects(TimeFrame): bool
+    moveTo(DateTime): void
+    shift(ms: number): void
+    extend(ms: number): void
+    findNext(TimeFrame[]): TimeFrame
+}
+
+
+class CalendarEventImpl implements CalendarEvent {
+    timeFrame: TimeFrame
+}
+
+
+TimeFrame "1" --o "2" DateTime
+
+CalendarEventImpl "1" --* "1" DateTime
+
+@enduml

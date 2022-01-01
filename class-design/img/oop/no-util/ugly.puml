@@ -1,0 +1,35 @@
+@startuml ugly
+
+class DateUtil {
+    getLength(CalendarEvent): number
+    add(Date, {year: number, month: number, ..., second: number, ms: number}): void
+    moveTo(CalendarEvent, Date): void
+    shift(CalendarEvent, time: number): void
+    extend(CalendarEvent, time: number): void
+    format(CalendarEvent, pattern: string): string
+    intersects(CalendarEvent, CalendarEvent): bool
+    findNext(CalendarEvent, CalendarEvent[]): CalendarEvent
+}
+
+class Date <<Built-in>> {
+    ---
+    getFullYear(): number
+    getMonth(): number
+    getDate(): number
+    getHours(): number
+    getMinutes(): number
+    getSeconds(): number
+    getMillseconds(): number
+    getTime(): number
+}
+
+interface CalendarEvent {
+    start: number
+    end: number
+}
+
+
+DateUtil -> Date : process
+DateUtil --> CalendarEvent : process
+
+@enduml
