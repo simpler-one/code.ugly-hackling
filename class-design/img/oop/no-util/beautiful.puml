@@ -16,7 +16,14 @@ class DateTime {
     format(pattern: string): string
 }
 
-interface CalendarEvent {
+
+class FooCalendar <<ExternalLibrary>> {
+    events: FooCalendarEvent[]
+}
+
+interface FooCalendarEvent <<ExternalLibrary>> {
+    title: string
+    description: string
     start: number
     end: number
 }
@@ -34,13 +41,15 @@ class TimeFrame {
 }
 
 
-class CalendarEventImpl implements CalendarEvent {
+class FooCalendarEventImpl implements FooCalendarEvent {
     timeFrame: TimeFrame
 }
 
 
+FooCalendar "1" --o "0..n" FooCalendarEvent
+
 TimeFrame "1" --o "2" DateTime
 
-CalendarEventImpl "1" --* "1" DateTime
+FooCalendarEventImpl "1" --o "1" TimeFrame
 
 @enduml

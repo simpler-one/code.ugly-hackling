@@ -23,13 +23,21 @@ class Date <<Built-in>> {
     getTime(): number
 }
 
-interface CalendarEvent {
+class FooCalendar <<ExternalLibrary>> {
+    events: FooCalendarEvent[]
+}
+
+interface FooCalendarEvent <<ExternalLibrary>> {
+    title: string
+    description: string
     start: number
     end: number
 }
 
 
-DateUtil -> Date : process
-DateUtil --> CalendarEvent : process
+FooCalendar "1" --o "0..n" FooCalendarEvent
+
+DateUtil -> FooCalendarEvent : process
+DateUtil --> Date : process
 
 @enduml
