@@ -1,6 +1,6 @@
 # Obsolated
 
-## ES2017
+## ES2016
 ### Includes
 
 <table><tbody>
@@ -18,6 +18,7 @@ const hasApple = fruitsList.includes("apple");
 </tbody></table>
 
 
+## ES2017
 ### Padding (excluding: IE)
 
 <table><tbody>
