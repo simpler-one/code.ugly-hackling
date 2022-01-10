@@ -10,13 +10,13 @@ Assign statement removes let keyword and shows it has only single output.
 <tr><!-- ugly --><td valign="top">
 
 ```js
-let isFruit;
+let isBANANA;
 if (
-    item.name === "BANANA"
-    || item.name === "Blueberry"
-    || item.name === "Cherry"
-    || item.name === "Durian"
-    || item.name === "Elderberry"
+    item.isTreePlant
+    && item.isFruit
+    && item.color === "red"
+    && item.taste === "sweet"
+    && item.shape === "round"
 ) {
     isFruit = true;
 } else {
@@ -26,16 +26,13 @@ if (
 </td><!-- beautiful --><td valign="top">
 
 ```js
-const isFruit = item.name === "Apple"
-    || item.name === "Blueberry"
-    || item.name === "Cherry"
-    || item.name === "Durian"
-    || item.name === "Elderberry"
+const isApple = item.isTreePlant
+    && item.isFruit
+    && item.color === "red"
+    && item.taste === "sweet"
+    && item.shape === "round"
 ;
 ```
----
-See: [Set](#set)
-
 </td></tr>
 </tbody></table>
 
