@@ -34,7 +34,7 @@ const isFruit = item.name === "Apple"
 ;
 ```
 ---
-See: [Map](#map)
+See: [Set](#set)
 
 </td></tr>
 </tbody></table>
