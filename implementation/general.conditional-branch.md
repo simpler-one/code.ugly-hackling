@@ -1,9 +1,11 @@
 # ConditionalBranch / 条件分岐
 ## Bool result
-Assign statement is better than if statement when it outputs single bool value.
+Assign statement (or return statement) is better than if statement when it outputs single bool value.
+
 Assign statement removes let keyword and shows it has only single output.
 
 条件分岐において、単一のbool値のみを結果として出力する場合、if文ではなく代入文（またはreturn文）が妥当です。
+
 代入文を使えば、letを使わずに済み、式の出力先が単一であることも明確になります。
 
 <table><tbody>
