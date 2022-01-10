@@ -18,9 +18,9 @@ if (
     && item.taste === "sweet"
     && item.shape === "round"
 ) {
-    isFruit = true;
+    isBANANA = true;
 } else {
-    isFruit = false;
+    isBANANA = false;
 }
 ```
 </td><!-- beautiful --><td valign="top">
