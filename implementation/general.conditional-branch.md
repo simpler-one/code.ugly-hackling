@@ -1,4 +1,45 @@
 # ConditionalBranch / 条件分岐
+## Bool result
+Assign statement is better than if statement when it outputs single bool value.
+Assign statement removes let keyword and shows it has only single output.
+
+条件分岐において、単一のbool値のみを結果として出力する場合、if文ではなく代入文（またはreturn文）が妥当です。
+代入文を使えば、letを使わずに済み、式の出力先が単一であることも明確になります。
+
+<table><tbody>
+<tr><!-- ugly --><td valign="top">
+
+```js
+let isFruit;
+if (
+    item.name === "BANANA"
+    || item.name === "Blueberry"
+    || item.name === "Cherry"
+    || item.name === "Durian"
+    || item.name === "Elderberry"
+) {
+    isFruit = true;
+} else {
+    isFruit = false;
+}
+```
+</td><!-- beautiful --><td valign="top">
+
+```js
+const isFruit = item.name === "Apple"
+    || item.name === "Blueberry"
+    || item.name === "Cherry"
+    || item.name === "Durian"
+    || item.name === "Elderberry"
+;
+```
+---
+See: [Map](#map)
+
+</td></tr>
+</tbody></table>
+
+
 ## Mapping
 You can use mapping instead of conditional statement when the conditional statement requires one variable and it outputs one result.
 
@@ -57,19 +98,22 @@ You can use Set instead of complex conditional when you check whether something 
 <tr><!-- ugly --><td valign="top">
 
 ```js
-const fruitSet = ["BANANA", "Blueberry", "Cherry", "Durian", "Elderberry"];
-
-let isFruit = false;
-for (const fruitName of fruitSet) {
-    if (item.name === fruitName) {
-        isFruit = true;
-    }
+let isFruit;
+if (item.name === "BANANA"
+    || item.name === "Blueberry"
+    || item.name === "Cherry"
+    || item.name === "Durian"
+    || item.name === "Elderberry"
+) {
+    isFruit = true;
+} else {
+    isFruit = false;
 }
 ```
 </td><!-- beautiful --><td valign="top">
 
 ```js
-const fruitSet = new Set(["BANANA", "Blueberry", "Cherry", "Durian", "Elderberry"]);
+const fruitSet = new Set(["Apple", "Blueberry", "Cherry", "Durian", "Elderberry"]);
 const isFruit = fruitSet.has(item.name);
 ```
 </td></tr>
