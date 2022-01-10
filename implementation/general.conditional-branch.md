@@ -2,7 +2,7 @@
 ## Mapping
 You can use mapping instead of conditional statement when the conditional statement requires one variable and it outputs one result.
 
-条件文期において、１つの変数を入力に１つの結果を出力する場合、マッピングを代わりに使用することができます。
+条件分岐において、１つの変数を入力に１つの結果を出力する場合、マッピングを代わりに使用することができます。
 
 <table><tbody>
 <tr><!-- ugly --><td valign="top">
@@ -43,6 +43,34 @@ const COLOR_TO_FRUIT = new Map([
 ]);
 
 const prediction = COLOR_TO_FRUIT.get(fruit.color);
+```
+</td></tr>
+</tbody></table>
+
+
+## Set
+You can use Set instead of complex conditional when you check whether something comes on a cirtain set.
+
+条件分岐において、特定の集合に属するかどうかを調べる場合はSetが役立ちます
+
+<table><tbody>
+<tr><!-- ugly --><td valign="top">
+
+```js
+const fruitSet = ["BANANA", "Blueberry", "Cherry", "Durian", "Elderberry"];
+
+let isFruit = false;
+for (const fruitName of fruitSet) {
+    if (item.name === fruitName) {
+        isFruit = true;
+    }
+}
+```
+</td><!-- beautiful --><td valign="top">
+
+```js
+const fruitSet = new Set(["BANANA", "Blueberry", "Cherry", "Durian", "Elderberry"]);
+const isFruit = fruitSet.has(item.name);
 ```
 </td></tr>
 </tbody></table>
