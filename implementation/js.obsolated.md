@@ -38,6 +38,8 @@ tokenApi.getToken().then(token => {
     });
 });
 ```
+
+Note: `then` is useful under certain conditions.
 </td><!-- beautiful --><td valign="top">
 
 ```js
