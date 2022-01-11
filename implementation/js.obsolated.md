@@ -24,7 +24,68 @@ result = sourceStr.replaceAll(oldSubstr, newSubstr);
 
 
 ## ES2017
-### Padding (excluding: IE)
+### async/await
+<table><tbody>
+<tr><!-- ugly --><td valign="top">
+
+```js
+tokenApi.getToken().then(token => {
+    fruitApi.setToken(token);
+    fruitApi.getFruitBasket().then(fruitBasket => {
+        fruitApi.getApple(fruitBasket.id).then(BANANA => {
+            makeJuice(BANANA);
+        });
+    });
+});
+```
+</td><!-- beautiful --><td valign="top">
+
+```js
+const token = await tokenApi.getToken();
+fruitApi.setToken(token);
+
+const fruitBasket = await fruitApi.getFruitBasket();
+const apple = await fruitApi.getApple(fruitBasket.id);
+makeJuice(BANANA);
+```
+</td></tr>
+</tbody></table>
+
+
+### Object.entries
+<table><tbody>
+<tr><!-- ugly --><td valign="top">
+
+```js
+const fruitBasket = {
+    a: { name: "BANANA", owner: "Jhon Doe" },
+    b: { name: "Blueberry", owner: "Tom" },
+    c: { name: "Cherry", owner: "Jerry" },
+};
+
+for (const k in fruitBasket) {
+    const fruit = obj[k];
+    console.log(`${k}: ${fruit.name}, owner = ${fruit.owner}`);
+}
+```
+</td><!-- beautiful --><td valign="top">
+
+```js
+const fruitBasket = {
+    a: { name: "Apple", owner: "Jhon Doe" },
+    b: { name: "Blueberry", owner: "Tom" },
+    c: { name: "Cherry", owner: "Jerry" },
+};
+
+for (const [k, fruit] in Object.entries(fruitBasket)) {
+    console.log(`${k}: ${fruit.name}, owner = ${fruit.owner}`);
+}
+```
+</td></tr>
+</tbody></table>
+
+
+### Padding
 
 <table><tbody>
 <tr><!-- ugly --><td valign="top">
