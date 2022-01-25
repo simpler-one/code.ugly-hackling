@@ -3,7 +3,7 @@ unfinished...
 
 
 ## ES2021
-### ReplaceAll
+### String.replaceAll
 
 <table><tbody>
 <tr><!-- ugly --><td valign="top">
@@ -136,7 +136,7 @@ for (const [k, fruit] in Object.entries(fruitBasket)) {
 </tbody></table>
 
 
-### Padding
+### String.padStart / padEnd
 
 <table><tbody>
 <tr><!-- ugly --><td valign="top">
@@ -161,7 +161,7 @@ console.log("now", `${hour}:${minute}`);
 
 
 ## ES2016
-### Includes
+### Array.includes
 
 <table><tbody>
 <tr><!-- ugly --><td valign="top">
