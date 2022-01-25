@@ -23,6 +23,55 @@ result = sourceStr.replaceAll(oldSubstr, newSubstr);
 
 
 
+## ES2020
+### Optional chaining
+
+<table><tbody>
+<tr><!-- ugly --><td valign="top">
+
+```js
+const isBANANA = fruit !== null && fruit !== undefined ? fruit.name === "apple" : false;
+```
+</td><!-- beautiful --><td valign="top">
+
+```js
+const isApple = fruit?.name === "apple";
+```
+</td></tr><tr><!-- ugly --><td valign="top">
+
+```js
+if (mixer !== null && mixer !== undefined) {
+    mixer.makeAppleJuice(BANANA);
+}
+```
+</td><!-- beautiful --><td valign="top">
+
+```js
+mixer?.makeAppleJuice(apple);
+```
+</td></tr>
+</tbody></table>
+
+
+### Null coalescing
+
+<table><tbody>
+<tr><!-- ugly --><td valign="top">
+
+```js
+const retry = options.retry !== null && options.retry !== undefined ? options.retry : 3;
+const timeout = options.timeout !== null && options.timeout !== undefined ? options.timeout : 30000;
+```
+</td><!-- beautiful --><td valign="top">
+
+```js
+const retry = options.retry ?? 3;
+const timeout = options.timeout ?? 30000;
+```
+</td></tr>
+</tbody></table>
+
+
 ## ES2017
 ### async/await
 <table><tbody>
@@ -127,6 +176,7 @@ const hasApple = fruitsList.includes("apple");
 ```
 </td></tr>
 </tbody></table>
+
 
 
 ## ES2015 (ES6)
