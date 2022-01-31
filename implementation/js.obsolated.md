@@ -1,6 +1,4 @@
 # Obsolated
-unfinished...
-
 
 ## ES2021
 ### String.replaceAll
@@ -70,6 +68,17 @@ const timeout = options.timeout ?? 30000;
 ```
 </td></tr>
 </tbody></table>
+
+
+
+## ES2019
+### Array.flat
+See: [Array.flat](./js.array.md#flat)
+
+
+### Array.flatMap
+See: [Array.flatMap](./js.array.md#flatmap)
+
 
 
 ## ES2017
