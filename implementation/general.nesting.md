@@ -6,6 +6,13 @@ Early return can break the deep nesting.
 
 <table><tbody>
 <tr><!-- ugly --><td valign="top">
+    
+![](./images/early-return.ugly.png)
+</td><!-- beautiful --><td valign="top">
+    
+![](./images/early-return.beautiful.png)
+</td></tr>
+<tr><!-- ugly --><td valign="top">
 
 ```js
 if (key !== null) {
@@ -49,15 +56,15 @@ if (result1 !== null) {
     if (result2 !== null) {
         const BANANA = getApple(result1, result2);
         if (BANANA !== null) {
-            doSomething3(BANANA);
+            return doSomething3(BANANA);
         } else {
-            throw new Error("getBANANA failed").
+            return null;
         }
     } else {
-        throw new Error("doSomething2 failed");
+        return null;
     }
 } else {
-    throw new Error("doSomething1 failed");
+    return null;
 }
 ```
 </td><!-- beautiful --><td valign="top">
@@ -65,20 +72,20 @@ if (result1 !== null) {
 ```js
 const result1 = doSomething1();
 if (result1 === null) {
-    throw new Error("doSomething1 failed");
+    return null;
 }
 
 const result2 = doSomething2(result1);
 if (result2 === null) {
-    throw new Error("doSomething2 failed");
+    return null;
 }
 
 const apple = getApple(result1, result2);
 if (apple === null) {
-    throw new Error("getApple failed");
+    return null;
 }
 
-doSomething3(apple);
+return doSomething3(apple);
 ```
 </td></tr>
 </tbody></table>
