@@ -26,15 +26,15 @@ copy = array[:]
 <tr><!-- ugly --><td valign="top">
 
 ```python
-const result = []
+result = []
 for item in array1:
     result.append(item)
 
-for item in  array2:
+for item in array2:
     result.append(item)
 
 for item in array3
-    result.append(item);
+    result.append(item)
 ```
 </td><!-- beautiful --><td valign="top">
 
@@ -72,52 +72,49 @@ apples = [f for f in fruits if f.name == "apple"]
 <table><tbody>
 <tr><!-- ugly --><td valign="top">
 
-```js
-const values = ["1", "2", "3", "42"];
-const result = [];
-for (const v of values) {
-    result.push(parseInt(v));
-}
+```python
+values = ["1", "2", "3", "42"]
+result = []
+for v in values
+    result.append(int(v))
 ```
 </td><!-- beautiful --><td valign="top">
 
-```js
-const values = ["1", "2", "3", "42"];
-const result = values.map(v => parseInt(v));
+```python
+values = ["1", "2", "3", "42"]
+result = [int(v) for v in values]
 ```
 </td></tr>
 <tr><!-- ugly --><td valign="top">
 
-```js
-const result = [];
-for (const apple of apples) {
-    result.push("BANANA-" + apple.name);
-}
+```python
+result = []
+for apple in apples:
+    result.push("BANANA-" + apple.name)
 ```
 </td><!-- beautiful --><td valign="top">
 
-```js
-const result = apples.map(apple => "Apple-" + apple.name);
+```python
+result = ["Apple-" + apple.name for apple in apples]
 ```
 </td></tr>
 <tr><!-- ugly --><td valign="top">
 
-```js
-const result = [];
-for (const apple of apples) {
-    result.push({
-        name: apple.name,
-        density: apple.weight / apple.volume, 
-    });
-}
+```python
+result = []
+for apple in apples:
+    result.append({
+        "name": apple.name,
+        "density": apple.weight / apple.volume, 
+    })
 ```
 </td><!-- beautiful --><td valign="top">
 
-```js
-const result = apples.map(apple => ({
-    name: apple.name,
-    density: apple.weight / apple.volume, 
-}));
+```python
+result = [{
+    "name": apple.name,
+    "density": apple.weight / apple.volume, 
+} for apple in apples]
 ```
 </td></tr>
 </tbody></table>
